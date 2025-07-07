@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.steve.ev.EvApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.631 s -- in com.steve.ev.EvApplicationTests

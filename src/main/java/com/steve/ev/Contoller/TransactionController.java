@@ -1,7 +1,6 @@
 package com.steve.ev.Contoller;
 
 import com.steve.ev.Dto.TransactionDto;
-import com.steve.ev.Entity.Transaction;
 import com.steve.ev.Service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -34,39 +34,56 @@ public class OcppService {
 
                 case "StatusNotification":
                     handleStatusNotification(session, uniqueId);
+                    System.out.println("Received StatusNotification from session ID: " + session.getId() +
+                            " , UniqueId: " + uniqueId);
                     break;
 
                 case "TriggerMessage":
                     handleTriggerMessage(session, uniqueId);
+                    System.out.println("Received TriggerMessage from session ID: " + session.getId() +
+                            " , UniqueId: " + uniqueId);
+                    break;
+
+
+                case "RemoteStartTransaction":
+                    handleRemoteStartTransaction(session, uniqueId);
                     break;
 
             }
         }
     }
 
+    private void handleRemoteStartTransaction(WebSocketSession session, String uid) throws IOException {
+        String response = String.format("[3,\"%s\",{\"status\":\"Accepted\"}]", uid);
+        session.sendMessage(new TextMessage(response));
+    }
     private void handleTriggerMessage(WebSocketSession session, String uid)
             throws IOException {
         String response = String.format("[3,\"%s\",{\"status\":\"Accepted\"}]", uid);
         session.sendMessage(new TextMessage(response));
     }
 
-    private void handleStatusNotification(WebSocketSession session, String uid) throws IOException {
+    private void handleStatusNotification(WebSocketSession session, String uid)
+            throws IOException {
         String response = String.format("[3,\"%s\",{\"currentTime\":\"%s\"status\":\"Available\"}]",
                 uid, LocalDateTime.now());
         session.sendMessage(new TextMessage(response));
     }
 
-    private void handleBootNotification(WebSocketSession session, String uid) throws IOException {
+    private void handleBootNotification(WebSocketSession session, String uid)
+            throws IOException {
         String response = String.format("[3,\"%s\",{\"currentTime\":\"%s\",\"interval\":300,\"" +
                         "status\":\"Accepted\"}]",
                 uid, LocalDateTime.now());
         session.sendMessage(new TextMessage(response));
     }
 
-    private void handleAuthorize(WebSocketSession session, String uid, JsonNode payload) throws IOException {
+    private void handleAuthorize(WebSocketSession session, String uid, JsonNode payload)
+            throws IOException {
         String idTag = payload.get("idTag").asText();
         // Assume always authorized
-        String response = String.format("[3,\"%s\",{\"idTagInfo\":{\"status\":\"Accepted\"}}]", uid);
+        String response = String.format("[3,\"%s\",{\"idTagInfo\":{\"status\":\"Accepted\"}}]", uid,
+                idTag);
         session.sendMessage(new TextMessage(response));
     }
 }

@@ -1,7 +1,6 @@
 package com.steve.ev.Configuration;
 
 import com.steve.ev.Handler.OcppWebSocketHandler;
-import com.steve.ev.Service.OcppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
