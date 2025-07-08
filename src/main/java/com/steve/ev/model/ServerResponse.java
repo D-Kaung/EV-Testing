@@ -1,4 +1,4 @@
-package com.steve.ev.Model;
+package com.steve.ev.model;
 
 public class ServerResponse {
 

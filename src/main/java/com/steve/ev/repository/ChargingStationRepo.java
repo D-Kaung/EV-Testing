@@ -1,6 +1,6 @@
-package com.steve.ev.Repository;
+package com.steve.ev.repository;
 
-import com.steve.ev.Entity.ChargingStation;
+import com.steve.ev.entity.ChargingStation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

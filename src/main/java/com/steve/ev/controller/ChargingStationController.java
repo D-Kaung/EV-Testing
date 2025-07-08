@@ -1,7 +1,7 @@
-package com.steve.ev.Contoller;
+package com.steve.ev.controller;
 
-import com.steve.ev.Model.ChargingStationResponse;
-import com.steve.ev.Service.ChargingStationService;
+import com.steve.ev.model.ChargingStationResponse;
+import com.steve.ev.service.ChargingStationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

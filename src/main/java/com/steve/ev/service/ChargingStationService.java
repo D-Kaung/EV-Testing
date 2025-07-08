@@ -1,8 +1,8 @@
-package com.steve.ev.Service;
+package com.steve.ev.service;
 
-import com.steve.ev.Entity.ChargingStation;
-import com.steve.ev.Model.ChargingStationResponse;
-import com.steve.ev.Repository.ChargingStationRepo;
+import com.steve.ev.entity.ChargingStation;
+import com.steve.ev.model.ChargingStationResponse;
+import com.steve.ev.repository.ChargingStationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.steve.ev.Contoller;
+package com.steve.ev.controller;
 
-import com.steve.ev.Model.TransactionResponse;
-import com.steve.ev.Service.TransactionService;
+import com.steve.ev.model.TransactionResponse;
+import com.steve.ev.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

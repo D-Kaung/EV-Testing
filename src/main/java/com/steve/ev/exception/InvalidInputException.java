@@ -1,4 +1,4 @@
-package com.steve.ev.Exception;
+package com.steve.ev.exception;
 
 public class InvalidInputException extends RuntimeException{
 

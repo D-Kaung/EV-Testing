@@ -1,4 +1,4 @@
-package com.steve.ev.Entity;
+package com.steve.ev.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

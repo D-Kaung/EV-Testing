@@ -1,6 +1,6 @@
-package com.steve.ev.Configuration;
+package com.steve.ev.configuration;
 
-import com.steve.ev.Websocket.ChargeWebsocketHandler;
+import com.steve.ev.websocket.ChargeWebsocketHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;

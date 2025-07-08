@@ -1,7 +1,7 @@
-package com.steve.ev.Service;
+package com.steve.ev.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.steve.ev.Model.ServerResponse;
+import com.steve.ev.model.ServerResponse;
 
 @FunctionalInterface
 public interface ActionHandler {
