@@ -11,12 +11,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDateTime;
 
 @Entity
-public class ChargingStation {
+public class ChargingPoint {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank(message = "ChargerId is required.")
-    private Long id;
+    private String id;
 
     @NotBlank(message = "Vendor is required.")
     private String vendor;
@@ -37,9 +36,9 @@ public class ChargingStation {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime lastStatusNotification;
 
-    public ChargingStation(Long id, LocalDateTime lastStatusNotification,
-                           LocalDateTime registeredAt, LocalDateTime lastHeartbeat,
-                           String status, String model, String vendor) {
+    public ChargingPoint(String id, LocalDateTime lastStatusNotification,
+                         LocalDateTime registeredAt, LocalDateTime lastHeartbeat,
+                         String status, String model, String vendor) {
         this.id = id;
         this.lastStatusNotification = lastStatusNotification;
         this.registeredAt = registeredAt;
@@ -49,15 +48,15 @@ public class ChargingStation {
         this.vendor = vendor;
     }
 
-    public ChargingStation() {
+    public ChargingPoint() {
 
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

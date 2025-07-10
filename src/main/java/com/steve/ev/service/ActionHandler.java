@@ -6,5 +6,5 @@ import com.steve.ev.model.ServerResponse;
 @FunctionalInterface
 public interface ActionHandler {
 
-    ServerResponse handle(Long chargeId, JsonNode payload);
+    ServerResponse handle(String chargerId, JsonNode payload);
 }

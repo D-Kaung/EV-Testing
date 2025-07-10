@@ -12,11 +12,10 @@ import java.time.LocalDateTime;
 public class ChargingTransaction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @NotBlank(message = "Connector is cannot be null.")
-    private String connectorId;
+    private String chargerId;
 
     private LocalDateTime startTime;
     private LocalDateTime stopTime;
@@ -26,9 +25,9 @@ public class ChargingTransaction {
     private String status;
     private LocalDateTime updateAt;
 
-    public ChargingTransaction(Long id, LocalDateTime updateAt, String status, double cost,
+    public ChargingTransaction(String id, LocalDateTime updateAt, String status, double cost,
                                double energyConsumed,
-                               LocalDateTime stopTime, LocalDateTime startTime, String connectorId) {
+                               LocalDateTime stopTime, LocalDateTime startTime, String chargerId) {
         this.id = id;
         this.updateAt = updateAt;
         this.status = status;
@@ -36,18 +35,18 @@ public class ChargingTransaction {
         this.energyConsumed = energyConsumed;
         this.stopTime = stopTime;
         this.startTime = startTime;
-        this.connectorId = connectorId;
+        this.chargerId = chargerId;
     }
 
     public ChargingTransaction() {
 
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -99,11 +98,11 @@ public class ChargingTransaction {
         this.startTime = startTime;
     }
 
-    public  String getConnectorId() {
-        return connectorId;
+    public  String getChargerId() {
+        return chargerId;
     }
 
-    public void setConnectorId(String connectorId) {
-        this.connectorId = connectorId;
+    public void setChargerId(String chargerId) {
+        this.chargerId = chargerId;
     }
 }

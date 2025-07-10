@@ -1,6 +1,6 @@
 package com.steve.ev.model;
 
-public enum StationStatus {
+public enum ChargingPointStatus {
 
     AVAILABLE,
     PREPARING,

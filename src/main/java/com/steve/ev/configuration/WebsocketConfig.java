@@ -1,6 +1,7 @@
 package com.steve.ev.configuration;
 
-import com.steve.ev.websocket.ChargeWebsocketHandler;
+import com.steve.ev.websocket.ChargerWebsocketHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
@@ -8,15 +9,16 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @Configuration
 public class WebsocketConfig implements WebSocketConfigurer {
 
-    private final ChargeWebsocketHandler chargeWebsocketHandler;
+    private final ChargerWebsocketHandler chargerWebsocketHandler;
 
-    public WebsocketConfig(ChargeWebsocketHandler chargeWebsocketHandler) {
-        this.chargeWebsocketHandler = chargeWebsocketHandler;
+    @Autowired
+    public WebsocketConfig(ChargerWebsocketHandler chargerWebsocketHandler) {
+        this.chargerWebsocketHandler = chargerWebsocketHandler;
     }
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-         registry.addHandler(chargeWebsocketHandler, "ev/test/{stationId}")
+         registry.addHandler(chargerWebsocketHandler, "ev/chargePoint/{stationId}")
                  .setAllowedOrigins("*");
     }
 }

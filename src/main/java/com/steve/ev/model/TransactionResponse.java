@@ -4,8 +4,8 @@ public class TransactionResponse extends ServerResponse{
 
     private String transactionId;
 
-    public TransactionResponse(Long status, String transactionId) {
-        super(String.valueOf(status));
+    public TransactionResponse(String status, String transactionId) {
+        super(status);
         this.transactionId = transactionId;
     }
 

@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 @Component
-public class ChargingStationStatusCache {
+public class ChargingPointStatusCache {
 
     private final ConcurrentMap<Long, LocalDateTime> chargerStatusMap = new ConcurrentHashMap<>();
 
