@@ -9,13 +9,13 @@ import java.util.concurrent.ConcurrentMap;
 @Component
 public class ChargingPointStatusCache {
 
-    private final ConcurrentMap<Long, LocalDateTime> chargerStatusMap = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, LocalDateTime> chargerStatusMap = new ConcurrentHashMap<>();
 
-    public void updateStatus(Long chargerId, LocalDateTime lastStatusUpdateTime) {
+    public void updateStatus(String chargerId, LocalDateTime lastStatusUpdateTime) {
         chargerStatusMap.put(chargerId, lastStatusUpdateTime);
     }
 
-    public LocalDateTime getLastStatusUpdateTime(Long chargerId) {
+    public LocalDateTime getLastStatusUpdateTime(String chargerId) {
         return chargerStatusMap.get(chargerId);
     }
 
@@ -23,8 +23,8 @@ public class ChargingPointStatusCache {
         chargerStatusMap.remove(chargerId);
     }
 
-    public ConcurrentMap<Long, LocalDateTime> getChargersToMarkUnavailable(LocalDateTime cutoffTime) {
-        ConcurrentMap<Long, LocalDateTime> chargersToUpdate = new ConcurrentHashMap<>();
+    public ConcurrentMap<String, LocalDateTime> getChargersToMarkUnavailable(LocalDateTime cutoffTime) {
+        ConcurrentMap<String, LocalDateTime> chargersToUpdate = new ConcurrentHashMap<>();
         chargerStatusMap.forEach((chargerId, lastStatusUpdateTime) -> {
             if (lastStatusUpdateTime.isBefore(cutoffTime)) {
                 chargersToUpdate.put(chargerId, lastStatusUpdateTime);

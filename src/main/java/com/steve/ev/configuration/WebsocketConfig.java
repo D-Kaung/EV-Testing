@@ -18,7 +18,7 @@ public class WebsocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-         registry.addHandler(chargerWebsocketHandler, "ev/chargePoint/{stationId}")
+         registry.addHandler(chargerWebsocketHandler, "/ws/chargePoint/{Id}")
                  .setAllowedOrigins("*");
     }
 }
